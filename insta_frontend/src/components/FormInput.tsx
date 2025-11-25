@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 interface InputFormProps extends React.InputHTMLAttributes<HTMLInputElement>, React.ComponentProps<"input"> { 
     type: string,
     placeholder: string,
@@ -14,7 +16,7 @@ const InputForm = ({
 }: InputFormProps) => {
     return (
         <input
-            className="border p-2 rounded-md outline-none"
+            className="mt-3 border p-2 rounded-md outline-none"
             type={type}
             placeholder={placeholder}
             {...props}
