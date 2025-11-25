@@ -1,13 +1,35 @@
- import logo from '../assets/Vector.png'
- 
- const Register = () => {
+import { Controller, useForm, type SubmitHandler } from 'react-hook-form';
+import InputForm from "../components/FormInput";
+import { FormMessage } from '../components/FormMessage';
 
+type RegisterFormInputs = {
+    email: string;
+}
+
+const Register = () => {
+    const {
+        handleSubmit,
+        control,
+        formState: { errors }
+    } = useForm<RegisterFormInputs>()
+
+    const onSubmit: SubmitHandler<RegisterFormInputs> = () => {
+
+    }
     return (
-        <div className="cl">
-            <h1>Register</h1>
-            <img src={logo} alt='Instagram logo'/>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <Controller
+                name="email"
+                control={control}
+                render={({ field }) => {
+                    return <>
+                        <InputForm type="email" placeholder='Enter email address' {...field} className='' />
+                        {errors.email && <FormMessage variant='error' message={errors.email.message} />}
+                    </>;
+                }}
+            />
 
-        </div>
+        </form>
     )
 
 }

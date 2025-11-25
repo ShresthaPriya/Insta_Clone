@@ -1,26 +1,24 @@
 import React from "react";
-import type{ InputFormProps } from "../types/form.types";
 
+interface InputFormProps extends React.InputHTMLAttributes<HTMLInputElement>, React.ComponentProps<"input"> { 
+    type: string,
+    placeholder: string,
+    className: string
+}
 
-const InputForm: React.FC<InputFormProps> = ({
+const InputForm = ({
     type,
     placeholder,
-    register,
-    error,
-    ...rest
-
-}) => {
-    return(
-        <div className="flex flex-col gap-2">
-            <input 
+    className,
+    ...props
+}: InputFormProps) => {
+    return (
+        <input
+            className="border p-2 rounded-md outline-none"
             type={type}
             placeholder={placeholder}
-            {...register}
-            {...rest}
-            className="border p-2 rounded-md outline-none" />
-
-            {error && <span className="text-red-500 text-xs">{error}</span>}
-        </div>
+            {...props}
+        />
     )
 }
 

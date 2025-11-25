@@ -7,17 +7,17 @@ import Layout from "./pages/Layout";
 const router = createBrowserRouter([
   {
     path: "/",
-    element : <Layout/>,
-    children : [
-      {path: "/register" , element: <Register/>},
+    element: <Layout />,
+    children: [
+      { path: "/register", element: <Register /> },
     ],
   }
 ])
 
-const App = ()=> {
+const App = () => {
 
 
-  return <RouterProvider router = {router}/>;
+  return <RouterProvider router={router} />;
 
 };
 
