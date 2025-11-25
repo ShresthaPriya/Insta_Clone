@@ -1,16 +1,25 @@
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Register from "./pages/Register";
+import Layout from "./pages/Layout";
 
-function App() {
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element : <Layout/>,
+    children : [
+      {path: "/register" , element: <Register/>},
+    ],
+  }
+])
+
+const App = ()=> {
 
 
-  return (
-    <>
-        <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-     
-    </>
-  )
-}
+  return <RouterProvider router = {router}/>;
+
+};
+
 
 export default App
