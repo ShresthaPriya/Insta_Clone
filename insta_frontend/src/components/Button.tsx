@@ -1,8 +1,9 @@
 import type { ButtonProps } from "../types/form";
 import { tv } from "tailwind-variants";
+import clsx from "clsx";
 
 const button = tv({
-  base: "font-medium px-4 py-2 transition",
+  base: "font-medium px-4 py-2 transition transform",
   variants: {
     color: {
       primary: "bg-blue-500 text-white",
@@ -26,15 +27,20 @@ export const FormButton = ({
   color,
   size,
   rounded,
+  isHovered = false,
   className = "",
   ...props
-}: ButtonProps & {
-  color?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg";
-  rounded?: "none" | "md" | "full"
-}) => {
+}: ButtonProps) => {
   return (
-    <button {...props} className={button({ size, color, rounded, className })}>
+    <button
+      {...props}
+      className={clsx(
+        button({ size, color, rounded }),
+        isHovered &&
+          "hover:scale-105 hover:bg-opacity-90 transition-transform duration-200",
+        className
+      )}
+    >
       {text}
     </button>
   );

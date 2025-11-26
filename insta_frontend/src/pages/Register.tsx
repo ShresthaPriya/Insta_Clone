@@ -126,7 +126,8 @@ const Register = () => {
       />
       </form>
 
-      <FormButton type="submit" text="Register" color="primary" size="md" rounded="none" className="w-sm " />
+      <FormButton type="submit" text="Register" color="primary" size="md" rounded="none"   isHovered={true}
+className="w-sm " />
 
 
 
