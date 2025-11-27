@@ -19,10 +19,24 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  name      String
-  email     String   @unique
-  password  String
+  id          String     @id @default(uuid())
+  fullName    String
+  userName    String  @unique
+  isVarified  Boolean @default(false)
+  // email     String   @unique
+  phoneNumber Int      @unique
+  password    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  // otp         Otp[]  
+}
+
+model Otp {
+  id        String      @id @default(uuid())
+  otp       String
+  expiredAt DateTime
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  userInfo    Json[]
+  attemptCount Int
+  
 }
