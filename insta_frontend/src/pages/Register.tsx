@@ -7,7 +7,8 @@ import type { RegisterFormInput } from "../validator/formValidation";
 import { FormButton } from "../components/Button";
 import { Link } from "react-router-dom";
 
-import profile from "../assets/Vector.png";
+// import profile from "../assets/Vector.png";
+import logo from '../assets/Vector.png'
 
 // type RegisterFormInputs = {
 //     email: string;
@@ -27,7 +28,7 @@ const Register = () => {
   ) => {};
   return (
     <div className="flex flex-col justify-center items-center p-4 gap-8 h-screen">
-      <img src={profile} alt="Insta Logo" className="object-contain" />
+      <img src={logo} alt="Insta Logo" className="object-contain" />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-6 w-sm"
