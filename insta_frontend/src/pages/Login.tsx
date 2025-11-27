@@ -8,6 +8,7 @@ import { FormButton } from "../components/Button";
 import { Link } from "react-router-dom";
 
 import profile from "../assets/Vector.png";
+import loginLogo from "../assets/landing-3x.png";
 
 // type LoginFormInputs = {
 //     email: string;
@@ -26,6 +27,8 @@ const Login = () => {
     data: RegisterFormInput
   ) => {};
   return (
+    // <div className="flex flex-row justify-around items-center">
+      // <img src={loginLogo} alt="Login Image" className="hidden w-90 h-90 md:block object-contain" />
     <div className="flex flex-col justify-center items-center p-4 gap-8 h-screen">
       <img src={profile} alt="Insta Logo" className="object-contain" />
       <form
@@ -101,6 +104,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
