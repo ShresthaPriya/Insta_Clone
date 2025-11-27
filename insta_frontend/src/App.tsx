@@ -1,15 +1,19 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Register from "./pages/Register";
-import Layout from "./pages/Layout";
+import RootLayout from "./pages/RootLayout";
+import Login from "./pages/Login";
+import ResetPassword from "./pages/ResetPassword";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <RootLayout />,
     children: [
       { path: "/register", element: <Register /> },
+      { path: "/Login", element: <Login/>},
+      { path: "/reset-password", element: <ResetPassword/>}
     ],
   }
 ])

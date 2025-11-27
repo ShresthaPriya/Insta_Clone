@@ -16,3 +16,10 @@ export const loginSchema = z.object({
 })
 
 export type LoginInput = z.infer<typeof loginSchema>;
+
+
+export const resetPasswordSchema = z.object({
+      email: z.string().email("Invalid email address"),
+})
+
+export type ResetFormInputs = z.infer<typeof resetPasswordSchema>;
